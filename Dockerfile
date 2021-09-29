@@ -3,7 +3,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
 COPY ./app/app.py /opt/webapp/
 COPY ./app/requirements.txt /tmp/
-RUN pip install --index-url http://pypi.python.org/simple/ --upgrade pip
+# RUN pip install --index-url http://pypi.python.org/simple/ --upgrade pip
 RUN pip install --trusted-host -qr /tmp/requirements.txt
 EXPOSE 5000
 ENTRYPOINT ["python", "/opt/webapp/app.py"]
