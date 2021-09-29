@@ -6,7 +6,7 @@ COPY ./app/requirements.txt /tmp/
 # RUN pip install --index-url http://pypi.python.org/simple/ --upgrade pip
 WORKDIR /
 RUN curl -O https://pypi.python.org/packages/source/p/pip/pip-1.2.1.tar.gz
-RUN tar xvfz pip-1.2.1.tar.gz
+RUN tar -xvfz pip-1.2.1.tar.gz
 WORKDIR /pip-1.2.1
 RUN python setup.py install
 RUN pip install -qr /tmp/requirements.txt
