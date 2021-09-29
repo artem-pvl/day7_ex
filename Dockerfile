@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip=1.2.1
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip=1.2
 COPY ./app/app.py /opt/webapp/
 COPY ./app/requirements.txt /tmp/
 # RUN pip install --index-url http://pypi.python.org/simple/ --upgrade pip
