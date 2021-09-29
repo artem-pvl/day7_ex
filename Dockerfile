@@ -1,9 +1,7 @@
 FROM ubuntu:14.04
-RUN apt update \
-&&  apt install python-all python-pip -y
-RUN python -m pip install --upgrade pip
+RUN RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
 COPY ./app/app.py /opt/webapp/
 COPY ./app/requirements.txt /tmp/
-RUN pip install --no-input -q -r /tmp/requirements.txt
+RUN pip install -qr /tmp/requirements.txt
 EXPOSE 5000
 ENTRYPOINT ["python", "/opt/webapp/app.py"]
