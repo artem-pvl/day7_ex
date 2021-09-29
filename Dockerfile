@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+RUN apt-get search python-pip
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
 COPY ./app/app.py /opt/webapp/
 COPY ./app/requirements.txt /tmp/
