@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
-RUN apt-cache --all-versions --full search python-pip
+RUN apt-cache --full search python-pip
 COPY ./app/app.py /opt/webapp/
 COPY ./app/requirements.txt /tmp/
 # RUN pip install --index-url http://pypi.python.org/simple/ --upgrade pip
